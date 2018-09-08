@@ -7,11 +7,9 @@ class Mario{
     constructor(apellido){
         this.apellido = apellido
         this.imagen1 = new Image()
-        this.imagen1.src = 'https://bit.ly/2L7yH3'
-        this.imagen2 = new Image()
-        this.imagen2.src = 'https://bit.ly/2L3ikoe'
+        this.imagen1.src = './images/ambulance.jpg'
         this.imagen = this.imagen1;
-        this.x = 10;
+        this.x = 20;
         this.y = 295;
         this.width = 30;
         this.height = 40;
@@ -29,7 +27,7 @@ class Mario{
     draw(){
         if(this.y < 295) this.y += 4;
         if(frames % 10 === 0){
-             this.imagen = this.imagen == this.imagen1 ? this.imagen2 : this.imagen1;
+             this.imagen = this.imagen == this.imagen1 ? this.imagen1 : this.imagen1;
         }
         ctx.drawImage(this.imagen, this.x, this.y, this.width,this.height);
     }
