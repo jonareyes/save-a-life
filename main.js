@@ -7,12 +7,12 @@ class Ambulancia{
     constructor(apellido){
         this.apellido = apellido
         this.imagen1 = new Image()
-        this.imagen1.src = './images/ambulance.jpg'
+        this.imagen1.src = './images/ambulance trans azul blanco.png'
         this.imagen2 = new Image()
-        this.imagen2.src = './images/ambulance2.jpg'
+        this.imagen2.src = './images/ambulance trans rojo blanco.png'
         this.imagen = this.imagen1;
         this.x = 10;
-        this.y = 295;
+        this.y = 250;
         this.width = 40;
         this.height = 40;
     }
@@ -27,7 +27,7 @@ class Ambulancia{
 
     
     draw(){
-        if(this.y < 295) this.y += 4;
+        if(this.y < 250) this.y += 4;
         if(frames % 10 === 0){
              this.imagen = this.imagen == this.imagen1 ? this.imagen2 : this.imagen1;
         }
@@ -112,7 +112,7 @@ addEventListener('keydown', function(event){
 })
 
 
-var enemies = [];
+//*var enemies = [];
 
 function generateEnemies() {
     if(frames % 100 == 0 || frames % 60 == 0 || frames % 170 == 0){
@@ -127,7 +127,7 @@ function drawingEnemies(){
         enemy.draw()
         if(ambulanciaErum.collision(enemy)){
             //Ejecutamos el gameOver
-            fondo.gameOver();
-        }
-    })
+            fondo.gameOver(); 
+        } 
+    }) 
 } 
